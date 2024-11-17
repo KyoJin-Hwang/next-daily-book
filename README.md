@@ -14,7 +14,7 @@
 - Back-end :
 - 버전 및 이슈관리 : Github
 - 서비스 배포 환경 : Vercel
-- 디자인 :
+- 디자인 및 이미지 : Pigma, Pinterest
 
 ## 2. 채택한 개발 기술 과 그 이유
 
