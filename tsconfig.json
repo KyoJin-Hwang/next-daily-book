@@ -19,16 +19,27 @@
       }
     ],
     "paths": {
+      // 패키지 관리
       "@/*": ["./src/*"],
+      // Page 관리
       "@app/*": ["./src/app/*"],
+      // 컴포넌트 관리
       "@components/*": ["./src/components/*"],
+      // 커스텀 훅 관리
       "@hooks/*": ["./src/hooks/*"],
+      // 인스턴스,api요청,인증,유효성 큰 유틸리티 관리
       "@lib/*": ["./src/lib/*"],
+      // 타입정의
       "@models/*": ["./src/models/*"],
+      // 외부API 관리
       "@services/*": ["./src/services/*"],
+      // store 상태 관리
       "@stores/*": ["./src/stores/*"],
+      // global, theme, color 관리
       "@styles/*": ["./src/styles/*"],
+      // 날짜포맷팅, 문자열첫글자를 대문자 등등 작은 유틸리티 관리
       "@utils/*": ["./src/utils/*"],
+      // 이미지 폴더 관리
       "@images/*": ["./public/images/*"]
     }
   },
