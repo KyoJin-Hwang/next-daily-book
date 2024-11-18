@@ -14,10 +14,25 @@
     'Droid Sans', 'Helvetica Neue', sans-serif;
 }
 
-.pre {
+html {
+  font-size: 16px;
+}
+
+@media screen and (max-width: 800px) {
+  html {
+    font-size: 14px;
+  }
+}
+
+.pre-font {
   font-family: var(--font-Pre);
   font-weight: 500;
 }
-.book {
+.book-font {
   font-family: var(--font-Book);
+}
+
+body {
+  margin: 0;
+  background: #f8f4ec; /* 배경색 */
 }

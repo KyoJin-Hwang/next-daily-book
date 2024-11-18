@@ -1,0 +1,100 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.book {
+  width: 20rem;
+  height: 30rem;
+  position: relative;
+  perspective: 1000px;
+  transition: transform 1s ease-in-out;
+}
+
+.cover {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, #8b5e34, #5d3a1a);
+  color: white;
+  font-size: 2.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid black;
+  border-radius: 8px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  z-index: 3;
+  position: absolute;
+  transform-origin: left;
+  transform: rotateY(0deg) translateX(0);
+  flex-direction: column;
+  gap: 20px;
+  transition: all 1s ease-in-out;
+}
+
+.cover span:nth-child(1) {
+  font-size: 5rem;
+}
+
+.pages {
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.page {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: #fff;
+  border-bottom: 1px solid #eee;
+  padding: 1rem;
+  box-sizing: border-box;
+  transform-origin: left;
+  transform: rotateY(-180deg) translateX(0);
+  transition: transform 1s ease-in-out;
+}
+
+.book:hover {
+  transform: translateX(40px);
+}
+
+.book:hover .cover {
+  transform: rotateY(-160deg);
+  color: transparent;
+}
+
+.book:hover .page:nth-child(1) {
+  transform: rotateY(0deg);
+  z-index: 2;
+}
+
+@media screen and (max-width: 1023px) {
+  .cover {
+    transform-origin: top;
+  }
+  .book:hover {
+    transform: translateX(0px);
+  }
+
+  .book:hover .cover {
+    transform: rotateX(160deg);
+    color: transparent;
+  }
+
+  .book:hover .page:nth-child(1) {
+    transform: rotateY(0deg);
+    z-index: 2;
+  }
+}
