@@ -1,5 +1,7 @@
 import type { Metadata } from 'next';
 import '@styles/globals.css';
+import Book from '@/components/Home/Book/Book';
+import { ThemeProvider } from 'next-themes';
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -12,8 +14,17 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body>{children}</body>
+    <html lang="en" suppressHydrationWarning>
+      <body>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="light"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <Book>{children}</Book>
+        </ThemeProvider>
+      </body>
     </html>
   );
 }
