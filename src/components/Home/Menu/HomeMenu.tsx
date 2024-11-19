@@ -1,5 +1,5 @@
 'use client';
-import styles from './menu.module.css';
+import styles from './HomeMenu.module.css';
 
 const HomeMenu = () => {
   return <div className={styles.container}></div>;

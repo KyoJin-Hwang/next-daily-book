@@ -3,11 +3,13 @@
   align-items: center;
   justify-content: center;
   height: 100vh;
+  overflow: hidden;
+  padding: 0px 1rem;
 }
 
 .book {
-  width: 20rem;
-  height: 30rem;
+  width: 30rem;
+  height: 40rem;
   position: relative;
   perspective: 1000px;
   transition: transform 1s ease-in-out;
@@ -24,13 +26,15 @@
   align-items: center;
   border: 1px solid black;
   border-radius: 8px;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.8);
   z-index: 3;
   position: absolute;
   transform-origin: left;
   transform: rotateY(0deg) translateX(0);
   flex-direction: column;
   gap: 20px;
+  cursor: pointer;
+  font-weight: bold;
   transition: all 1s ease-in-out;
 }
 
@@ -41,7 +45,7 @@
 .pages {
   width: 100%;
   height: 100%;
-  background: #fff;
+  background: #fffbe6;
   border: 1px solid #ddd;
   border-radius: 8px;
   position: absolute;
@@ -57,7 +61,7 @@
   position: absolute;
   top: 0;
   left: 0;
-  background: #fff;
+  background: #fffbe6;
   border-bottom: 1px solid #eee;
   padding: 1rem;
   box-sizing: border-box;
@@ -66,34 +70,43 @@
   transition: transform 1s ease-in-out;
 }
 
-.book:hover {
-  transform: translateX(40px);
+.open {
+  transform: translateX(80px);
 }
 
-.book:hover .cover {
+.open .cover {
   transform: rotateY(-160deg);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
   color: transparent;
 }
-
-.book:hover .page:nth-child(1) {
+.open .page:nth-child(1) {
   transform: rotateY(0deg);
   z-index: 2;
 }
 
+@media screen and (min-width: 1023px) {
+  .open .pages {
+    width: 30rem;
+  }
+}
+
 @media screen and (max-width: 1023px) {
+  .book {
+    width: 25rem;
+  }
+
   .cover {
     transform-origin: top;
   }
-  .book:hover {
+  .open {
     transform: translateX(0px);
   }
 
-  .book:hover .cover {
+  .open .cover {
     transform: rotateX(160deg);
-    color: transparent;
   }
 
-  .book:hover .page:nth-child(1) {
+  .open .page:nth-child(1) {
     transform: rotateY(0deg);
     z-index: 2;
   }
