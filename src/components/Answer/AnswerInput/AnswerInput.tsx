@@ -7,9 +7,8 @@ const AnswerInput = () => {
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setText(e.target.value); // 입력 처리
   };
-  console.log(text);
   return (
-    <form id="answerForm">
+    <form id="answerForm" className={styles.form}>
       <input
         type="text"
         value={text}
@@ -17,12 +16,8 @@ const AnswerInput = () => {
         placeholder="질문을 입력하세요"
         className={styles.input}
       ></input>
-      <button
-        type="submit"
-        form="answerForm"
-        onClick={() => window.open('/', '_self')}
-      >
-        🙈결과
+      <button type="submit" form="answerForm" className={styles.answerButton}>
+        🙈 결과
       </button>
     </form>
   );
