@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 
-import styles from './Book.module.css';
+import style from './Book.module.css';
 import ThemeSwitcher from '@/components/Common/ThemeSwitcher/ThemeSwitcher';
 import Footer from '@/components/Common/Footer/Footer';
 import Header from '@/components/Common/Header/Header';
@@ -16,19 +16,17 @@ const Book = ({ children }: { children: React.ReactNode }) => {
     }
   };
   return (
-    <div className={styles.container}>
+    <div className={style.container}>
       <div
-        className={`${styles.book} ${isClicked ? styles.open : ''}`}
+        className={`${style.book} ${isClicked ? style.open : ''}`}
         onClick={handleClick}
       >
-        <div className={`${styles.cover} book-font`}>
+        <div className={`${style.cover} book-font`}>
           <span>🌞</span>
           <span>오늘의 책님</span>
         </div>
-        <div className={styles.pages}>
-          <div
-            className={`${styles.page} ${isClicked ? styles.pageOpened : ''}`}
-          >
+        <div className={style.pages}>
+          <div className={`${style.page} ${isClicked ? style.pageOpened : ''}`}>
             <Header />
             {children}
             <Footer />
