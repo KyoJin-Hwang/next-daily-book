@@ -24,15 +24,24 @@ html {
   }
 }
 
-.pre-font {
-  font-family: var(--font-Pre);
-  font-weight: 500;
-}
 .book-font {
   font-family: var(--font-Book);
 }
-
 body {
   margin: 0;
-  background: #f8f4ec; /* 배경색 */
+  color: black;
+  font-family: var(--font-Pre);
+  font-weight: 500;
+}
+
+html.light body {
+  background: #f8f4ec;
+}
+
+html.dark body {
+  background: #091827;
+}
+a {
+  text-decoration: none;
+  color: inherit;
 }

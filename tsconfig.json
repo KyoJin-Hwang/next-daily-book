@@ -40,7 +40,9 @@
       // 날짜포맷팅, 문자열첫글자를 대문자 등등 작은 유틸리티 관리
       "@utils/*": ["./src/utils/*"],
       // 이미지 폴더 관리
-      "@images/*": ["./public/images/*"]
+      "@images/*": ["./public/images/*"],
+      // SVG 폴더 관리
+      "@svg/*": ["./public/svg/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],

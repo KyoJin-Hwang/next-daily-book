@@ -1,11 +1,11 @@
-// import styles from './page.module.css';
-
-export const metadata = {
-  title: 'HOME',
-};
+import HomeMenu from '@/components/Home/Menu/HomeMenu';
 
 const Home = () => {
-  return <div>aaa</div>;
+  return (
+    <div>
+      <HomeMenu />
+    </div>
+  );
 };
 
 export default Home;

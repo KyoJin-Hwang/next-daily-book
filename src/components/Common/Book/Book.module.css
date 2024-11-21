@@ -68,6 +68,9 @@
   transform-origin: left;
   transform: rotateY(-180deg) translateX(0);
   transition: transform 1s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .open {

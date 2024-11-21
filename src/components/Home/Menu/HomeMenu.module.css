@@ -1,2 +1,52 @@
 .container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+.box {
+  width: 100%;
+  height: 14rem;
+  border-radius: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1.5rem;
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+.container a:nth-child(1) .box {
+  background: #aee2f2;
+}
+.container a:nth-child(1) .box:hover {
+  background: #57b3fe;
+}
+
+.container a:nth-child(2) .box {
+  background: #f28f8f;
+}
+.container a:nth-child(2) .box:hover {
+  background: #e55c5c;
+}
+
+.container a:nth-child(3) .box {
+  background: #b89ae7;
+}
+.container a:nth-child(2) .box:hover {
+  background: #8541fb;
+}
+
+.container a:nth-child(4) .box {
+  background: #ffb34d;
+}
+.container a:nth-child(2) .box:hover {
+  background: #ff8c00;
+}
+
+.box:nth-child(1):hover,
+.box:nth-child(2):hover,
+.box:nth-child(3):hover,
+.box:nth-child(4):hover {
+  color: white;
 }
