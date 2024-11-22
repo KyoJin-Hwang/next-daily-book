@@ -2,10 +2,10 @@
 import { useState } from 'react';
 import style from './QuestionInput.module.css';
 const QuestionInput = () => {
-  const [text, setText] = useState(''); // 상태 관리
+  const [text, setText] = useState('');
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setText(e.target.value); // 입력 처리
+    setText(e.target.value);
   };
   return (
     <form id="answerForm" className={style.form}>
