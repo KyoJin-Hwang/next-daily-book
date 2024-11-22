@@ -1,15 +1,14 @@
-import AnswerInput from '@/components/Answer/AnswerInput/AnswerInput';
-import style from './page.module.css';
+import PageWrap from '@/components/Common/PageWrap/PageWrap';
 
 export const metadata = {
-  title: '질문',
+  title: '답변',
 };
+
 const Answer = () => {
   return (
-    <div className={`${style.answerContainer} book-font`}>
-      <p>오늘의 질문</p>
-      <AnswerInput />
-    </div>
+    <PageWrap>
+      <div></div>
+    </PageWrap>
   );
 };
 

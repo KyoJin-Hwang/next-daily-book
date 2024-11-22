@@ -1,7 +1,7 @@
 'use client';
 import { useState } from 'react';
-import style from './AnswerInput.module.css';
-const AnswerInput = () => {
+import style from './QuestionInput.module.css';
+const QuestionInput = () => {
   const [text, setText] = useState(''); // 상태 관리
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -23,4 +23,4 @@ const AnswerInput = () => {
   );
 };
 
-export default AnswerInput;
+export default QuestionInput;

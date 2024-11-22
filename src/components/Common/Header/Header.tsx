@@ -3,17 +3,34 @@
 import Link from 'next/link';
 import style from './Header.module.css';
 import { usePathname } from 'next/navigation';
+import { todayFuc } from '@/utils/date';
+import { useEffect, useState } from 'react';
+import { useCategoryStore } from '@/stores/categoryStore';
 
 const Header = () => {
-  const pathname = usePathname(); // 현재 경로 가져오기
-  const date = new Date();
-  const formattedDate = date.toLocaleDateString('ko-KR'); // 'YYYY-MM-DD' 형식
+  const pathname = usePathname();
+  const [isHovered, setIsHovered] = useState(false);
+  const remove = useCategoryStore((state) => state.removeCategory);
+  const color = useCategoryStore((state) => state.category.color);
 
+  useEffect(() => {
+    if (color === '') return setIsHovered(false);
+  }, [color]);
   return (
     <div className={style.header}>
-      <p>{formattedDate}</p>
+      <p>{todayFuc(1)}</p>
       {pathname !== '/' && (
-        <Link href={'/'} className={`${style.headerLink}`}>
+        <Link
+          href={'/'}
+          className={`${style.headerLink}`}
+          onClick={remove}
+          onMouseEnter={() => setIsHovered(true)}
+          onMouseLeave={() => setIsHovered(false)}
+          style={{
+            backgroundColor: isHovered ? color : 'transparent',
+            transition: 'all 0.3s ease',
+          }}
+        >
           뒤로가기
         </Link>
       )}

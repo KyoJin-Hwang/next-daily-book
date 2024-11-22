@@ -1,7 +1,22 @@
 /**
- * # Params Type (Generic)
+ * 페이지 파라미터를 나타내는 제네릭 인터페이스입니다.
  *
- * URL에서의 Slug와 ID 제네릭타입
+ * 이 인터페이스는 다양한 타입의 파라미터를 처리할 수 있도록 설계.
+ * `params`는 타입 `T`에 해당하는 데이터를 포함.
+ *
+ * @template T - `params`의 타입을 지정하는 제네릭 타입.
+ *
+ * @example
+ * // 숫자형 파라미터를 사용하는 예시
+ * const pageParams: PageParams<{ id: number }> = {
+ *   params: { id: 123 },
+ * };
+ *
+ * @example
+ * // 문자열형 파라미터를 사용하는 예시
+ * const pageParams: PageParams<{ slug: string }> = {
+ *   params: { slug: 'example' },
+ * };
  */
 export interface PageParams<T> {
   params: T;
