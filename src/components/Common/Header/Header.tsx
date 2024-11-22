@@ -4,17 +4,18 @@ import Link from 'next/link';
 import style from './Header.module.css';
 import { usePathname } from 'next/navigation';
 import { todayFuc } from '@/utils/date';
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { useCategoryStore } from '@/stores/categoryStore';
+import { useHover } from '@/hooks/useHover';
 
 const Header = () => {
   const pathname = usePathname();
-  const [isHovered, setIsHovered] = useState(false);
+  const { isHovered, handleMouseEnter, handleMouseLeave } = useHover();
   const remove = useCategoryStore((state) => state.removeCategory);
   const color = useCategoryStore((state) => state.category.color);
-
+  const backgroundColor = isHovered ? color : 'transparent';
   useEffect(() => {
-    if (color === '') return setIsHovered(false);
+    if (color === '') return handleMouseLeave;
   }, [color]);
   return (
     <div className={style.header}>
@@ -24,10 +25,10 @@ const Header = () => {
           href={'/'}
           className={`${style.headerLink}`}
           onClick={remove}
-          onMouseEnter={() => setIsHovered(true)}
-          onMouseLeave={() => setIsHovered(false)}
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
           style={{
-            backgroundColor: isHovered ? color : 'transparent',
+            backgroundColor: backgroundColor,
             transition: 'all 0.3s ease',
           }}
         >
