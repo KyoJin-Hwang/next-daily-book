@@ -15,7 +15,10 @@ export const speakOnce = (text: string) => {
   }
 
   const post = `${text}`;
-  const utter = new SpeechSynthesisUtterance(post);
+  const voiceObj = new SpeechSynthesisUtterance(post);
+
+  voiceObj.rate = 0.9;
+  voiceObj.pitch = 0.5;
 
   // 음성 합성이 진행 중일 때 중복 호출을 방지
   if (window.speechSynthesis.speaking) {
@@ -23,9 +26,9 @@ export const speakOnce = (text: string) => {
   }
 
   // 음성이 끝난 후 새로운 음성을 실행하도록 설정
-  utter.onend = () => {
+  voiceObj.onend = () => {
     console.log('음성이 끝났습니다.');
   };
 
-  window.speechSynthesis.speak(utter);
+  window.speechSynthesis.speak(voiceObj);
 };
