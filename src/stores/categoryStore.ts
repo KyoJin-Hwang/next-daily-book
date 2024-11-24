@@ -29,6 +29,7 @@ export const useCategoryStore = create<CategoryState>()(
             let selectedAnswer = '';
             selectedAnswer = getAnswerForCategory(state.category.name);
             const categoryName = state.category.name as keyof CategoryAnswers;
+
             return {
               answers: { ...state.answers, [categoryName]: selectedAnswer },
             };

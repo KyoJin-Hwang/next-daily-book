@@ -8,10 +8,17 @@ export const useBookOpenStore = create<BookOpenState>()(
   devtools(
     persist(
       (set) => ({
-        isOpen: checkIfOpenToday(),
+        isOpen: false, // SSR 시 기본값
         setOpen: () => {
           set(() => ({ isOpen: true }));
-          localStorage.setItem('lastOpenedDate', todayFuc(2));
+          if (typeof window !== 'undefined') {
+            localStorage.setItem('lastOpenedDate', todayFuc(2));
+          }
+        },
+        initializeOpenState: () => {
+          if (typeof window !== 'undefined') {
+            set(() => ({ isOpen: checkIfOpenToday() }));
+          }
         },
       }),
       { name: 'isOpen' },

@@ -3,16 +3,17 @@
   flex-direction: column;
   align-items: center;
   gap: 10px;
+  font-size: 2rem;
 }
-.input {
+.questionInput {
   width: 17rem;
   padding: 0.8rem;
   border-radius: 0.7rem;
 }
 
-.answerButton {
+.questionButton {
   width: 100%;
   height: 3rem;
   border-radius: 1rem;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
 }

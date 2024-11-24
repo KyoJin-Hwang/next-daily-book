@@ -37,4 +37,5 @@ export interface CategoryState {
 export interface BookOpenState {
   isOpen: boolean;
   setOpen: () => void;
+  initializeOpenState: () => void;
 }

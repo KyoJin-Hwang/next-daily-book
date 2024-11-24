@@ -1,44 +1,41 @@
 'use client';
 import { useState } from 'react';
 import style from './QuestionInput.module.css';
-import { useTheme } from 'next-themes';
-import { useHover } from '@/hooks/useHover';
+import { useCategoryStore } from '@/stores/categoryStore';
+import HoverButton from '@/components/Common/Button/HoverButton';
+
 const QuestionInput = () => {
-  const { theme } = useTheme();
-
   const [text, setText] = useState('');
-  const { isHovered, handleMouseEnter, handleMouseLeave } = useHover();
 
-  const backgroundColor = isHovered
-    ? theme === 'dark'
-      ? 'black'
-      : '#ffcc89'
-    : theme === 'dark'
-      ? '#777'
-      : '#ebebeb';
+  const updateAnswer = useCategoryStore((state) => state.updateAnswer);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setText(e.target.value);
   };
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    updateAnswer();
+    setText('');
+  };
+
   return (
-    <form id="answerForm" className={style.form}>
+    <form id="questionForm" className={style.form} onSubmit={handleSubmit}>
+      <p>오늘의 질문</p>
       <input
         type="text"
         value={text}
         onChange={handleInputChange}
         placeholder="질문을 입력하세요"
-        className={style.input}
+        className={style.questionInput}
       ></input>
-      <button
+      <HoverButton
         type="submit"
-        form="answerForm"
-        className={style.answerButton}
-        onMouseEnter={handleMouseEnter}
-        onMouseLeave={handleMouseLeave}
-        style={{ backgroundColor: backgroundColor }}
+        form="questionForm"
+        className={style.questionButton}
       >
         🙈 결 과
-      </button>
+      </HoverButton>
     </form>
   );
 };

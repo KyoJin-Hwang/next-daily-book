@@ -5,10 +5,18 @@ import ThemeSwitcher from '@/components/Common/ThemeSwitcher/ThemeSwitcher';
 import Footer from '@/components/Common/Footer/Footer';
 import Header from '@/components/Common/Header/Header';
 import { useBookOpenStore } from '@/stores/bookOpenStore';
+import { useEffect } from 'react';
 
 const Book = ({ children }: { children: React.ReactNode }) => {
   const isOpen = useBookOpenStore((state) => state.isOpen);
   const setOpen = useBookOpenStore((state) => state.setOpen);
+  const initializeOpenState = useBookOpenStore(
+    (state) => state.initializeOpenState,
+  );
+
+  useEffect(() => {
+    initializeOpenState();
+  }, [initializeOpenState]);
   return (
     <div className={style.container}>
       <div
