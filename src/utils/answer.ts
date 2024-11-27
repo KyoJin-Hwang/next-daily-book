@@ -10,7 +10,7 @@ import { loves } from '@/data/loves';
  */
 export const getAnswerForCategory = (categoryName: string): string => {
   switch (categoryName) {
-    case 'answer':
+    case 'question':
       return answers[Math.floor(Math.random() * answers.length)].answer;
     case 'food':
       return foods[Math.floor(Math.random() * foods.length)].name;

@@ -1,24 +1,40 @@
 'use client';
 import { useState } from 'react';
 import style from './QuestionInput.module.css';
+import { useCategoryStore } from '@/stores/categoryStore';
+import HoverButton from '@/components/Common/Button/HoverButton';
+
 const QuestionInput = () => {
-  const [text, setText] = useState(''); // 상태 관리
+  const [text, setText] = useState('');
+
+  const updateAnswer = useCategoryStore((state) => state.updateAnswer);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setText(e.target.value); // 입력 처리
+    setText(e.target.value);
+  };
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    updateAnswer();
+    setText('');
   };
   return (
-    <form id="answerForm" className={style.form}>
+    <form id="questionForm" className={style.form} onSubmit={handleSubmit}>
+      <p>오늘의 질문</p>
       <input
         type="text"
         value={text}
         onChange={handleInputChange}
         placeholder="질문을 입력하세요"
-        className={style.input}
+        className={style.questionInput}
       ></input>
-      <button type="submit" form="answerForm" className={style.answerButton}>
-        🙈 결과
-      </button>
+      <HoverButton
+        type="submit"
+        form="questionForm"
+        className={style.questionButton}
+      >
+        🙈 결 과
+      </HoverButton>
     </form>
   );
 };

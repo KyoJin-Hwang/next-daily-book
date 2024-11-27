@@ -23,7 +23,9 @@ export interface CategoryState {
   answers: CategoryAnswers;
   selectCategory: (category: Category) => void;
   removeCategory: () => void;
+  removeAnswer: () => void;
   updateAnswer: () => void;
+  againAnswer: () => void;
 }
 
 /**
@@ -37,4 +39,5 @@ export interface CategoryState {
 export interface BookOpenState {
   isOpen: boolean;
   setOpen: () => void;
+  initializeOpenState: () => void;
 }
