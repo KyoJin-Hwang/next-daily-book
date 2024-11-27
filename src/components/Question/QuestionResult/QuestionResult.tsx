@@ -13,7 +13,6 @@ const QuestionResult = () => {
   };
 
   speakOnce(result);
-  console.log(2);
   return (
     <div className={style.resultContainer}>
       <p className={style.resultText}>{result}</p>

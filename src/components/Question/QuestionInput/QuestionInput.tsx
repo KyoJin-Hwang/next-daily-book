@@ -18,7 +18,6 @@ const QuestionInput = () => {
     updateAnswer();
     setText('');
   };
-  console.log(1);
   return (
     <form id="questionForm" className={style.form} onSubmit={handleSubmit}>
       <p>오늘의 질문</p>
