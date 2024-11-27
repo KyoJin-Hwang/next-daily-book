@@ -5,7 +5,7 @@ import PageWrap from '@/components/Common/PageWrap/PageWrap';
 export const metadata = {
   title: '질문',
 };
-const Answer = () => {
+const QuestionPage = () => {
   return (
     <PageWrap>
       <div className={`${style.pageContainer} book-font`}>
@@ -15,4 +15,4 @@ const Answer = () => {
   );
 };
 
-export default Answer;
+export default QuestionPage;

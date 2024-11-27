@@ -6,7 +6,6 @@ import QuestionResult from '../QuestionResult/QuestionResult';
 
 const Question = () => {
   const result = useCategoryStore((state) => state.answers.question);
-
   return !result ? <QuestionInput /> : <QuestionResult />;
 };
 
