@@ -7,11 +7,13 @@ import { speakOnce } from '@/utils/speak';
 
 const QuestionResult = () => {
   const result = useCategoryStore((state) => state.answers.question);
+  const removeAnswer = useCategoryStore((state) => state.removeAnswer);
   const isMobile = () => {
     return /Mobi|Android/i.test(navigator.userAgent);
   };
 
   speakOnce(result);
+  console.log(2);
   return (
     <div className={style.resultContainer}>
       <p className={style.resultText}>{result}</p>
@@ -26,7 +28,11 @@ const QuestionResult = () => {
         </HoverButton>
       )}
 
-      <HoverButton type="button" className={`${style.resultButton}`}>
+      <HoverButton
+        onClick={removeAnswer}
+        type="button"
+        className={`${style.resultButton}`}
+      >
         🔄 다시 하기
       </HoverButton>
     </div>

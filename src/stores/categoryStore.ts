@@ -14,6 +14,7 @@ const initialState: CategoryState = {
   selectCategory: () => {},
   removeCategory: () => {},
   updateAnswer: () => {},
+  removeAnswer: () => {},
 };
 
 // Zustand store 생성
@@ -32,6 +33,13 @@ export const useCategoryStore = create<CategoryState>()(
 
             return {
               answers: { ...state.answers, [categoryName]: selectedAnswer },
+            };
+          }),
+        removeAnswer: () =>
+          set((state) => {
+            const categoryName = state.category.name as keyof CategoryAnswers;
+            return {
+              answers: { ...state.answers, [categoryName]: '' },
             };
           }),
       }),

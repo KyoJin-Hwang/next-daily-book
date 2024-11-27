@@ -11,7 +11,6 @@ import { useHover } from '@/hooks/useHover';
 const Header = () => {
   const pathname = usePathname();
   const { isHovered, handleMouseEnter, handleMouseLeave } = useHover();
-  const remove = useCategoryStore((state) => state.removeCategory);
   const color = useCategoryStore((state) => state.category.color);
   const backgroundColor = isHovered ? color : 'transparent';
   useEffect(() => {
@@ -24,7 +23,6 @@ const Header = () => {
         <Link
           href={'/'}
           className={`${style.headerLink}`}
-          onClick={remove}
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}
           style={{

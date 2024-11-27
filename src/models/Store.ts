@@ -24,6 +24,7 @@ export interface CategoryState {
   selectCategory: (category: Category) => void;
   removeCategory: () => void;
   updateAnswer: () => void;
+  removeAnswer: () => void;
 }
 
 /**

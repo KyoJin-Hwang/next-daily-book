@@ -5,9 +5,10 @@ import QuestionInput from '../QuestionInput/QuestionInput';
 import QuestionResult from '../QuestionResult/QuestionResult';
 
 const Question = () => {
-  const categoryID = useCategoryStore((state) => state.category.id);
+  const { id: categoryID } = useCategoryStore((state) => state.category);
   const result = useCategoryStore((state) => state.answers.question);
-  return <>{categoryID && result ? <QuestionResult /> : <QuestionInput />}</>;
+
+  return !categoryID || !result ? <QuestionInput /> : <QuestionResult />;
 };
 
 export default Question;
