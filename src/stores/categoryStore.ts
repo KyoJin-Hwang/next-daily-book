@@ -1,8 +1,7 @@
-import { CategoryAnswers, CategoryState } from '@/models/Store';
-import { getAnswerForCategory } from '@/utils/answer';
-
 import { create } from 'zustand';
 import { devtools, persist } from 'zustand/middleware';
+import { CategoryAnswers, CategoryState } from '@/models/Store';
+import { getAnswerForCategory } from '@/utils/answer';
 
 const initialState: CategoryState = {
   category: { name: '', id: 0, color: '' },
@@ -17,29 +16,37 @@ const initialState: CategoryState = {
   removeAnswer: () => {},
 };
 
-// Zustand store 생성
 export const useCategoryStore = create<CategoryState>()(
   devtools(
     persist(
       (set) => ({
         ...initialState,
-        selectCategory: (category) => set({ category }),
-        removeCategory: () => set({ category: initialState.category }),
+        selectCategory: (category) =>
+          set(() => ({
+            category,
+          })),
+        removeCategory: () => set(() => ({ category: initialState.category })),
+        removeAnswer: () => set(() => ({ answers: initialState.answers })),
         updateAnswer: () =>
           set((state) => {
-            let selectedAnswer = '';
-            selectedAnswer = getAnswerForCategory(state.category.name);
+            const selectedAnswer = getAnswerForCategory(state.category.name);
             const categoryName = state.category.name as keyof CategoryAnswers;
 
             return {
-              answers: { ...state.answers, [categoryName]: selectedAnswer },
+              answers: {
+                ...state.answers,
+                [categoryName]: selectedAnswer,
+              },
             };
           }),
-        removeAnswer: () =>
+        againAnswer: () =>
           set((state) => {
             const categoryName = state.category.name as keyof CategoryAnswers;
             return {
-              answers: { ...state.answers, [categoryName]: '' },
+              answers: {
+                ...state.answers,
+                [categoryName]: '',
+              },
             };
           }),
       }),

@@ -23,8 +23,9 @@ export interface CategoryState {
   answers: CategoryAnswers;
   selectCategory: (category: Category) => void;
   removeCategory: () => void;
-  updateAnswer: () => void;
   removeAnswer: () => void;
+  updateAnswer: () => void;
+  againAnswer: () => void;
 }
 
 /**

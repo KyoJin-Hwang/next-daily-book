@@ -8,7 +8,7 @@ export const useBookOpenStore = create<BookOpenState>()(
   devtools(
     persist(
       (set) => ({
-        isOpen: false, // SSR 시 기본값
+        isOpen: false,
         setOpen: () => {
           set(() => ({ isOpen: true }));
           if (typeof window !== 'undefined') {

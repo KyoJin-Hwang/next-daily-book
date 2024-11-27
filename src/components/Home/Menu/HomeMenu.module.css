@@ -33,14 +33,14 @@
 .container a:nth-child(3) .box {
   background: #b89ae7;
 }
-.container a:nth-child(2) .box:hover {
+.container a:nth-child(3) .box:hover {
   background: #8541fb;
 }
 
 .container a:nth-child(4) .box {
   background: #ffb34d;
 }
-.container a:nth-child(2) .box:hover {
+.container a:nth-child(4) .box:hover {
   background: #ff8c00;
 }
 

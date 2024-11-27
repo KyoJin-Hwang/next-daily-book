@@ -4,15 +4,18 @@ import { useCategoryStore } from '@/stores/categoryStore';
 import style from './QuestionResult.module.css';
 import HoverButton from '@/components/Common/Button/HoverButton';
 import { speakOnce } from '@/utils/speak';
+import { useEffect } from 'react';
 
 const QuestionResult = () => {
   const result = useCategoryStore((state) => state.answers.question);
-  const removeAnswer = useCategoryStore((state) => state.removeAnswer);
-  const isMobile = () => {
-    return /Mobi|Android/i.test(navigator.userAgent);
-  };
+  const againAnswer = useCategoryStore((state) => state.againAnswer);
+  const isMobile = () => /Mobi|Android/i.test(navigator.userAgent);
 
-  speakOnce(result);
+  useEffect(() => {
+    if (!isMobile()) {
+      speakOnce(result);
+    }
+  }, [result]);
   return (
     <div className={style.resultContainer}>
       <p className={style.resultText}>{result}</p>
@@ -28,7 +31,7 @@ const QuestionResult = () => {
       )}
 
       <HoverButton
-        onClick={removeAnswer}
+        onClick={againAnswer}
         type="button"
         className={`${style.resultButton}`}
       >
