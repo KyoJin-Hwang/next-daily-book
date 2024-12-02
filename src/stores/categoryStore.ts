@@ -6,9 +6,9 @@ import { getAnswerForCategory } from '@/utils/answer';
 const initialState: CategoryState = {
   category: { name: '', id: 0, color: '' },
   answers: {
-    question: '',
-    love: '',
-    food: '',
+    question: 0,
+    love: 0,
+    food: 0,
   },
   selectCategory: () => {},
   removeCategory: () => {},

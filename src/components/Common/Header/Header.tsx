@@ -32,7 +32,7 @@ const Header = () => {
             transition: 'all 0.3s ease',
           }}
         >
-          ◀️ 뒤로
+          뒤로가기
         </Link>
       )}
     </div>

@@ -5,9 +5,9 @@ export interface Category {
 }
 
 export interface CategoryAnswers {
-  question: string;
-  love: string;
-  food: string;
+  question: number;
+  love: number;
+  food: number;
 }
 /**
  * 카테고리 상태를 관리하는 인터페이스

@@ -1,7 +1,19 @@
 .answerContainer {
   display: block;
+  text-align: center;
+  font-weight: bold;
+}
+.answerTitle {
+  font-size: 2rem;
 }
 .answerUl {
+  margin: 0;
 }
-.answerLi {
+.messageTitle {
+  font-size: 1.6rem;
+}
+.messageAnswer {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0;
 }
