@@ -14,6 +14,7 @@ const initialState: CategoryState = {
   removeCategory: () => {},
   updateAnswer: () => {},
   removeAnswer: () => {},
+  againAnswer: () => {},
 };
 
 export const useCategoryStore = create<CategoryState>()(

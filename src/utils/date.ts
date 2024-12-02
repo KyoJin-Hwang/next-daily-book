@@ -12,14 +12,17 @@ type DateFormatType = 1 | 2; // 타입을 별도로 정의
  */
 export const todayFuc = (type: DateFormatType): string => {
   const date = new Date();
-  const formattedDate = date.toLocaleDateString('ko-KR');
 
-  if (type === 1) return formattedDate;
-  else
-    return formattedDate
-      .replaceAll('.', '-')
-      .replace(/ /g, '')
-      .replace(/-$/, '');
+  // 연, 월, 일 추출
+  const year = date.getFullYear();
+  const month = String(date.getMonth() + 1).padStart(2, '0'); // 월은 0부터 시작하므로 +1
+  const day = String(date.getDate()).padStart(2, '0'); // 앞에 '0'을 추가
+
+  if (type === 1) {
+    return `${year}. ${month}. ${day}`;
+  } else {
+    return `${year}-${month}-${day}`;
+  }
 };
 
 /**

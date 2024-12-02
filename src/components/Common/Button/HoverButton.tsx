@@ -2,6 +2,7 @@
 
 import { useHover } from '@/hooks/useHover';
 import { useTheme } from 'next-themes';
+import { useEffect, useState } from 'react';
 
 interface HoverButtonProps {
   type: 'submit' | 'button';
@@ -18,28 +19,29 @@ const HoverButton = ({
   onClick,
   children,
 }: HoverButtonProps) => {
-  const { theme } = useTheme();
+  const { resolvedTheme } = useTheme();
   const { isHovered, handleMouseEnter, handleMouseLeave } = useHover();
+  const [backgroundColor, setBackgroundColor] = useState<string>('');
 
-  const backgroundColor = isHovered
-    ? theme === 'dark'
-      ? 'black'
-      : '#ffcc89'
-    : theme === 'dark'
-      ? '#777'
-      : '#ebebeb';
+  useEffect(() => {
+    const defaultColor = resolvedTheme === 'dark' ? '#777' : '#ebebeb';
+    const hoverColor = resolvedTheme === 'dark' ? 'black' : '#ffcc89';
+
+    setBackgroundColor(isHovered ? hoverColor : defaultColor);
+  }, [resolvedTheme, isHovered]);
 
   return (
     <button
+      suppressHydrationWarning
       type={type}
       form={form}
       className={className}
       onClick={onClick}
-      style={{ backgroundColor: backgroundColor }}
+      style={{ backgroundColor }}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
-      {children} {/* 전달된 children을 버튼 안에 렌더링 */}
+      {children}
     </button>
   );
 };

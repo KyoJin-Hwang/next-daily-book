@@ -9,6 +9,7 @@
 }
 .resultText {
   line-height: 160%;
+  font-weight: bold;
 }
 .resultButton {
   width: 100%;
