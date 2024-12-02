@@ -1,4 +1,4 @@
-import Question from '@/components/Question/Question/Question';
+import Question from '@/components/Question/Question';
 import style from './page.module.css';
 import PageWrap from '@/components/Common/PageWrap/PageWrap';
 

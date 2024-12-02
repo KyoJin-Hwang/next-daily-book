@@ -1,0 +1,19 @@
+.footerContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.footerP_top {
+  margin: 0;
+  font-size: 0.8rem;
+}
+.footerP_bottom {
+  color: #686868;
+  font-size: 0.8rem;
+  margin: 0;
+}
+.footerSpan {
+  color: black;
+  font-size: 1rem;
+  font-weight: bold;
+}

@@ -10,7 +10,7 @@ const ThemeSwitcher = () => {
     setTheme(theme === 'dark' ? 'light' : 'dark');
   };
   return (
-    <div className={style.darkDiv}>
+    <div className={style.switcherContainer}>
       <input
         checked={theme === 'light'}
         onChange={toggleChanger}

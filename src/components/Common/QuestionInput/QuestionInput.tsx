@@ -1,13 +1,16 @@
 'use client';
 import { useState } from 'react';
 import style from './QuestionInput.module.css';
-import { useCategoryStore } from '@/stores/categoryStore';
 import HoverButton from '@/components/Common/Button/HoverButton';
 
-const QuestionInput = () => {
+const QuestionInput = ({
+  title,
+  update,
+}: {
+  title: string;
+  update: () => void;
+}) => {
   const [text, setText] = useState('');
-
-  const updateAnswer = useCategoryStore((state) => state.updateAnswer);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setText(e.target.value);
@@ -15,12 +18,12 @@ const QuestionInput = () => {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    updateAnswer();
+    update();
     setText('');
   };
   return (
     <form id="questionForm" className={style.form} onSubmit={handleSubmit}>
-      <p>오늘의 질문</p>
+      <p>오늘의 {title}</p>
       <input
         type="text"
         value={text}

@@ -4,7 +4,7 @@ export const metadata = {
   title: '연애',
 };
 
-const Love = () => {
+const LovePage = () => {
   return (
     <PageWrap>
       <div></div>
@@ -12,4 +12,4 @@ const Love = () => {
   );
 };
 
-export default Love;
+export default LovePage;

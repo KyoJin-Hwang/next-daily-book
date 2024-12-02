@@ -1,7 +1,6 @@
 'use client';
 
 import style from './Book.module.css';
-import ThemeSwitcher from '@/components/Common/ThemeSwitcher/ThemeSwitcher';
 import Footer from '@/components/Common/Footer/Footer';
 import Header from '@/components/Common/Header/Header';
 import { useBookOpenStore } from '@/stores/bookOpenStore';
@@ -45,7 +44,6 @@ const Book = ({ children }: { children: React.ReactNode }) => {
             <Header />
             {children}
             <Footer />
-            <ThemeSwitcher />
           </div>
         </div>
       </div>

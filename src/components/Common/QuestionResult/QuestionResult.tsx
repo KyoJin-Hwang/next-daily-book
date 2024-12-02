@@ -5,11 +5,10 @@ import style from './QuestionResult.module.css';
 import HoverButton from '@/components/Common/Button/HoverButton';
 import { speakOnce } from '@/utils/speak';
 import { useEffect } from 'react';
+import { isMobile } from '@/utils/global';
 
-const QuestionResult = () => {
-  const result = useCategoryStore((state) => state.answers.question);
+const QuestionResult = ({ result }: { result: string }) => {
   const againAnswer = useCategoryStore((state) => state.againAnswer);
-  const isMobile = () => /Mobi|Android/i.test(navigator.userAgent);
 
   useEffect(() => {
     if (!isMobile()) {
