@@ -5,10 +5,12 @@ import HoverButton from '@/components/Common/Button/HoverButton';
 
 const QuestionInput = ({
   title,
-  update,
+  update1,
+  update2,
 }: {
   title: string;
-  update: () => void;
+  update1?: () => void;
+  update2?: (text: string) => void;
 }) => {
   const [text, setText] = useState('');
 
@@ -18,7 +20,8 @@ const QuestionInput = ({
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    update();
+    if (update1) update1();
+    if (update2) update2(text);
     setText('');
   };
   return (

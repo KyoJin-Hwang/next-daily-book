@@ -10,11 +10,17 @@ const initialState: CategoryState = {
     love: 0,
     food: 0,
   },
+  questions: {
+    question: '',
+    love: '',
+  },
   selectCategory: () => {},
   removeCategory: () => {},
   updateAnswer: () => {},
   removeAnswer: () => {},
   againAnswer: () => {},
+  updateQuestion: () => {},
+  removeQuestion: () => {},
 };
 
 export const useCategoryStore = create<CategoryState>()(
@@ -27,7 +33,7 @@ export const useCategoryStore = create<CategoryState>()(
             category,
           })),
         removeCategory: () => set(() => ({ category: initialState.category })),
-        removeAnswer: () => set(() => ({ answers: initialState.answers })),
+
         updateAnswer: () =>
           set((state) => {
             const selectedAnswer = getAnswerForCategory(state.category.name);
@@ -40,12 +46,37 @@ export const useCategoryStore = create<CategoryState>()(
               },
             };
           }),
+        removeAnswer: () => set(() => ({ answers: initialState.answers })),
         againAnswer: () =>
           set((state) => {
             const categoryName = state.category.name as keyof CategoryAnswers;
             return {
               answers: {
                 ...state.answers,
+                [categoryName]: '',
+              },
+              questions: {
+                ...state.questions,
+                [categoryName]: '',
+              },
+            };
+          }),
+        updateQuestion: (text: string) =>
+          set((state) => {
+            const categoryName = state.category.name as keyof CategoryAnswers;
+            return {
+              questions: {
+                ...state.questions,
+                [categoryName]: text,
+              },
+            };
+          }),
+        removeQuestion: () =>
+          set((state) => {
+            const categoryName = state.category.name as keyof CategoryAnswers;
+            return {
+              questions: {
+                ...state.questions,
                 [categoryName]: '',
               },
             };

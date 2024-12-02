@@ -8,9 +8,40 @@
 }
 .answerUl {
   margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.answerLi {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 .messageTitle {
   font-size: 1.6rem;
+}
+.messageFood_Div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 1.4rem;
+}
+.messageAnswer_Div {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.messageImg {
+  width: 6.6rem;
+  height: 6.6rem;
+  border-radius: 1rem;
+  transition: all ease 0.3s;
+  position: relative;
+}
+
+.messageImg:hover {
+  transform: translate(2rem, -80%) scale(2.5);
 }
 .messageAnswer {
   font-size: 1rem;
