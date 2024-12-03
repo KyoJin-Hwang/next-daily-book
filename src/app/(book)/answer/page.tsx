@@ -1,15 +1,15 @@
+import Answer from '@/components/Answer/Answer';
 import PageWrap from '@/components/Common/PageWrap/PageWrap';
-
 export const metadata = {
   title: '답변',
 };
 
-const Answer = () => {
+const AnswerPage = () => {
   return (
     <PageWrap>
-      <div></div>
+      <Answer></Answer>
     </PageWrap>
   );
 };
 
-export default Answer;
+export default AnswerPage;

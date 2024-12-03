@@ -6,7 +6,7 @@ const PageWrap = ({ children }: Readonly<{ children: React.ReactNode }>) => {
 
   return (
     <div
-      className={style.pageWrap}
+      className={style.wrapContainer}
       style={{
         backgroundColor: color,
       }}

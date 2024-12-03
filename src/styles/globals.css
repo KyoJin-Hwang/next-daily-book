@@ -27,8 +27,14 @@ html {
 .book-font {
   font-family: var(--font-Book);
 }
-body {
+body,
+ul,
+li {
   margin: 0;
+  padding: 0;
+  border: 0;
+}
+body {
   color: black;
   font-family: var(--font-Pre);
   font-weight: 500;
@@ -50,4 +56,9 @@ a {
 button {
   border: none;
   cursor: pointer;
+}
+
+ol,
+ul {
+  list-style: none;
 }

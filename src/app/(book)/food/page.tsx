@@ -4,7 +4,7 @@ export const metadata = {
   title: '음식',
 };
 
-const Food = () => {
+const FoodPage = () => {
   return (
     <PageWrap>
       <div></div>
@@ -12,4 +12,4 @@ const Food = () => {
   );
 };
 
-export default Food;
+export default FoodPage;

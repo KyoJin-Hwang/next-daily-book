@@ -1,7 +1,4 @@
-.darkDiv {
-  display: flex;
-  align-items: center;
-  justify-content: end;
+.switcherContainer {
 }
 .darkLabel {
   width: 125px;
@@ -34,6 +31,7 @@
   width: 0;
   height: 0;
   visibility: hidden;
+  position: absolute;
 }
 #darkInput:checked + .darkLabel {
   background-color: #ebebeb;

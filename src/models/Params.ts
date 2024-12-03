@@ -8,14 +8,23 @@
  *
  * @example
  * // 숫자형 파라미터를 사용하는 예시
- * const pageParams: PageParams<{ id: number }> = {
- *   params: { id: 123 },
+ *
+ * interface IDProp {
+ *  id:string;
+ * }
+ *
+ * const page = ({ params: { id } }: PageParams<IDProp>) => {
+ *   return <><>
  * };
  *
  * @example
  * // 문자열형 파라미터를 사용하는 예시
- * const pageParams: PageParams<{ slug: string }> = {
- *   params: { slug: 'example' },
+ * interface SlugProp {
+ *  id:string;
+ * }
+ *
+ * const page = ({ params: { slug } }: PageParams<SlugProp>) => {
+ *   return <><>
  * };
  */
 export interface PageParams<T> {
