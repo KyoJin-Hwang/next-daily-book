@@ -1,9 +1,9 @@
 'use client';
 import { useState } from 'react';
-import style from './QuestionInput.module.css';
+import style from './TextInput.module.css';
 import HoverButton from '@/components/Common/Button/HoverButton';
 
-const QuestionInput = ({
+const TextInput = ({
   title,
   update1,
   update2,
@@ -25,19 +25,23 @@ const QuestionInput = ({
     setText('');
   };
   return (
-    <form id="questionForm" className={style.form} onSubmit={handleSubmit}>
+    <form
+      id="questionForm"
+      className={style.textInput_form}
+      onSubmit={handleSubmit}
+    >
       <p>오늘의 {title}</p>
       <input
         type="text"
         value={text}
         onChange={handleInputChange}
         placeholder="질문을 입력하세요"
-        className={style.questionInput}
+        className={style.textInput_Input}
       ></input>
       <HoverButton
         type="submit"
         form="questionForm"
-        className={style.questionButton}
+        className={style.textInput_Button}
       >
         🙈 결 과
       </HoverButton>
@@ -45,4 +49,4 @@ const QuestionInput = ({
   );
 };
 
-export default QuestionInput;
+export default TextInput;

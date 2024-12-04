@@ -1,17 +1,17 @@
-.form {
+.textInput_Form {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 10px;
   font-size: 2rem;
 }
-.questionInput {
+.textInput_Input {
   width: 17rem;
   padding: 0.8rem;
   border-radius: 0.7rem;
 }
 
-.questionButton {
+.textInput_Button {
   width: 100%;
   height: 3rem;
   border-radius: 1rem;

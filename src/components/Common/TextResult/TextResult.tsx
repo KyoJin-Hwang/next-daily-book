@@ -1,13 +1,13 @@
 'use client';
 
 import { useCategoryStore } from '@/stores/categoryStore';
-import style from './QuestionResult.module.css';
+import style from './TextResult.module.css';
 import HoverButton from '@/components/Common/Button/HoverButton';
 import { speakOnce } from '@/utils/speak';
 import { useEffect } from 'react';
 import { isMobile } from '@/utils/global';
 
-const QuestionResult = ({ result }: { result: string }) => {
+const TextResult = ({ result }: { result: string }) => {
   const againAnswer = useCategoryStore((state) => state.againAnswer);
 
   useEffect(() => {
@@ -40,4 +40,4 @@ const QuestionResult = ({ result }: { result: string }) => {
   );
 };
 
-export default QuestionResult;
+export default TextResult;

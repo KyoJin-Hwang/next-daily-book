@@ -1,8 +1,10 @@
 'use client';
 
 import { useCategoryStore } from '@/stores/categoryStore';
-import QuestionInput from '../Common/QuestionInput/QuestionInput';
-import QuestionResult from '../Common/QuestionResult/QuestionResult';
+
+import TextInput from '../Common/TextInput/TextInput';
+import TextResult from '../Common/TextResult/TextResult';
+
 import { getAnswerForText } from '@/utils/answer';
 
 const Question = () => {
@@ -12,13 +14,9 @@ const Question = () => {
   const updateQuestion = useCategoryStore((state) => state.updateQuestion);
 
   return !resultID ? (
-    <QuestionInput
-      title="질문"
-      update1={updateAnswer}
-      update2={updateQuestion}
-    />
+    <TextInput title="질문" update1={updateAnswer} update2={updateQuestion} />
   ) : (
-    <QuestionResult result={getAnswerForText(1, resultID)} />
+    <TextResult result={getAnswerForText(1, resultID)} />
   );
 };
 
