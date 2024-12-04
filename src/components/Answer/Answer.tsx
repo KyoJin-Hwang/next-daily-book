@@ -19,14 +19,8 @@ const AnswerMessaage = ({
       >
         {title === '음식' ? (
           <>
-            <img
-              src="https://i.namu.wiki/i/uP4avo0JBW_V0gtcqC_Ybm8cTlEYMTtb9mPe0Roq2nQjK94lsIVFR_KzJsRFrNa2qdxfoYZKBsO86eqcIvJZ4dy91wXmmQGva0CM46fSTs1KSjTXqgMyeSefAQ-SgUxh4zxrACkHsleJfjUk9Dt_Fw.webp"
-              alt="1"
-              className={style.messageImg}
-            />
-            <p className={`${style.messageAnswer} book-font`}>
-              {result || '마라탕'}
-            </p>
+            <img src="/" alt="음식이미지" className={style.messageImg} />
+            <p className={`${style.messageAnswer} book-font`}>{result || ''}</p>
           </>
         ) : (
           <>
