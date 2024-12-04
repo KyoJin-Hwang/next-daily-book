@@ -27,7 +27,7 @@ const TextInput = ({
   return (
     <form
       id="questionForm"
-      className={style.textInput_form}
+      className={style.textInput_Form}
       onSubmit={handleSubmit}
     >
       <p>오늘의 {title}</p>

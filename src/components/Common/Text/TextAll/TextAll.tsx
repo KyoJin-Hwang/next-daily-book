@@ -2,12 +2,12 @@
 
 import { useCategoryStore } from '@/stores/categoryStore';
 
-import TextInput from '../Common/Text/TextInput/TextInput';
-import TextResult from '../Common/Text/TextResult/TextResult';
+import TextInput from '../TextInput/TextInput';
+import TextResult from '../TextResult/TextResult';
 
 import { getAnswerForText } from '@/utils/answer';
 
-const Question = () => {
+const TextAll = () => {
   const resultID = useCategoryStore((state) => state.answers.question);
 
   const updateAnswer = useCategoryStore((state) => state.updateAnswer);
@@ -20,4 +20,4 @@ const Question = () => {
   );
 };
 
-export default Question;
+export default TextAll;
