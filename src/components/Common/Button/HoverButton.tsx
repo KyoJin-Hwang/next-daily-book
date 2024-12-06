@@ -9,7 +9,7 @@ interface HoverButtonProps {
   form?: string;
   className: string;
   onClick?: () => void;
-  children: Reat.ReactNode;
+  children: React.ReactNode;
   disabled?: boolean;
 }
 

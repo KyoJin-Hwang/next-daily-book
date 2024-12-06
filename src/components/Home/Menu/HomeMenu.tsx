@@ -44,7 +44,7 @@ const HomeMenu = () => {
                 id: category.id,
                 color: category.color,
               });
-              foodID >= 0 ? againAnswer() : '';
+              if (foodID >= 0) againAnswer();
             } else {
               selectCategory({
                 name: category.name,
