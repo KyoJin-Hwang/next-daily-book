@@ -1,6 +1,7 @@
 'use client';
 
 import { useSearchParams } from 'next/navigation';
+import { Suspense } from 'react';
 import style from './Answer.module.css';
 import { getAnswerForText } from '@/utils/answer';
 import { useEffect, useState } from 'react';
@@ -49,9 +50,9 @@ const AnswerMessaage = ({
     </>
   );
 };
+
 const Answer = () => {
   const searchParams = useSearchParams();
-
   const [result, setResult] = useState<SeachResult[]>([
     { id: 0, text: '' },
     { id: 0, text: '' },
@@ -62,6 +63,11 @@ const Answer = () => {
   useEffect(() => {
     if (search) setResult(JSON.parse(decodeURIComponent(search)));
   }, [search]);
+
+  if (!search) {
+    return <div>로딩 중...</div>; // search 값이 없으면 로딩 표시
+  }
+
   return (
     <div className={style.answerContainer}>
       <ul className={style.answerUl}>
@@ -91,4 +97,12 @@ const Answer = () => {
   );
 };
 
-export default Answer;
+const AnswerSuspense = () => {
+  return (
+    <Suspense fallback={<div>로딩 중...</div>}>
+      <Answer />
+    </Suspense>
+  );
+};
+
+export default AnswerSuspense;
