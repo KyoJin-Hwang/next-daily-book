@@ -4,6 +4,7 @@ import PageWrap from '@/components/Common/PageWrap/PageWrap';
 
 export const metadata = {
   title: '질문',
+  description: '궁금한것을 질문하고 오늘의 답변을 얻어보세요!',
 };
 const QuestionPage = () => {
   return (

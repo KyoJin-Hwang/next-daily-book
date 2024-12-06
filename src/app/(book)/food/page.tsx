@@ -3,6 +3,7 @@ import Food from '@/components/Food/Food';
 import style from './page.module.css';
 export const metadata = {
   title: '음식',
+  description: '추천을 받고 오늘의 추천 메뉴를 추천받아보세요!',
 };
 
 const FoodPage = () => {
