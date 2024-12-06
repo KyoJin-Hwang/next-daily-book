@@ -2,22 +2,11 @@
 
 import { useCategoryStore } from '@/stores/categoryStore';
 
-import TextInput from '../Common/Text/TextInput/TextInput';
-import TextResult from '../Common/Text/TextResult/TextResult';
+import TextAll from '../Common/Text/TextAll/TextAll';
 
-import { getAnswerForText } from '@/utils/answer';
-
-const Question = () => {
-  const resultID = useCategoryStore((state) => state.answers.question);
-
-  const updateAnswer = useCategoryStore((state) => state.updateAnswer);
-  const updateQuestion = useCategoryStore((state) => state.updateQuestion);
-
-  return !resultID ? (
-    <TextInput title="질문" update1={updateAnswer} update2={updateQuestion} />
-  ) : (
-    <TextResult result={getAnswerForText(1, resultID)} />
-  );
+const Love = () => {
+  const id = useCategoryStore((state) => state.answers.love);
+  return <TextAll type={2} title="연애" resultID={id} />;
 };
 
-export default Question;
+export default Love;

@@ -1,0 +1,11 @@
+.pageContainer {
+  width: 100%;
+  height: 100%;
+  background: #f28f8f;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}

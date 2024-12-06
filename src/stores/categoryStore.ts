@@ -59,6 +59,10 @@ export const useCategoryStore = create<CategoryState>()(
                 ...state.questions,
                 [categoryName]: '',
               },
+              food: {
+                ...state.questions,
+                [categoryName]: '',
+              },
             };
           }),
         updateQuestion: (text: string) =>

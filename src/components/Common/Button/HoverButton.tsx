@@ -9,7 +9,8 @@ interface HoverButtonProps {
   form?: string;
   className: string;
   onClick?: () => void;
-  children: React.ReactNode;
+  children: Reat.ReactNode;
+  disabled?: boolean;
 }
 
 const HoverButton = ({
@@ -18,6 +19,7 @@ const HoverButton = ({
   className,
   onClick,
   children,
+  disabled,
 }: HoverButtonProps) => {
   const { resolvedTheme } = useTheme();
   const { isHovered, handleMouseEnter, handleMouseLeave } = useHover();
@@ -40,6 +42,7 @@ const HoverButton = ({
       style={{ backgroundColor }}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
+      disabled={disabled}
     >
       {children}
     </button>
