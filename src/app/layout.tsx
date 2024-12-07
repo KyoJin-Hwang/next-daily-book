@@ -12,6 +12,23 @@ export const metadata: Metadata = {
   icons: {
     icon: 'images/favicon.ico',
   },
+  openGraph: {
+    type: 'website',
+    title: '오늘의 책님',
+    description:
+      '“오늘의 책님”은 당신의 궁금증을 해결해 줄 재미있는 랜덤 답변 사이트입니다!',
+    url: 'https://book.bobcost.kr',
+    siteName: '오늘의 책님',
+    images: [
+      {
+        url: 'images/오늘의책님.png',
+        width: 400,
+        height: 400,
+        alt: '오늘의 책님 랜덤 답변 사이트',
+      },
+    ],
+    locale: 'ko_KR',
+  },
 };
 export default function RootLayout({
   children,
