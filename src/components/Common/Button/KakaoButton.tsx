@@ -16,7 +16,7 @@ const KakaoButton = ({ url }: { url: string }) => {
       if (!kakao.isInitialized()) {
         kakao.init(process.env.NEXT_PUBLIC_KAKAO_API_KEY);
       }
-
+      console.log(kakao);
       kakao.Link.sendDefault({
         objectType: 'feed',
         content: {
