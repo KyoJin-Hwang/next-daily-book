@@ -22,7 +22,8 @@ const KakaoButton = ({ url }: { url: string }) => {
         content: {
           title: '오늘의 책님',
           description: '궁금한 것을 질문하고, 오늘의 답변을 얻어 보세요!',
-          imageUrl: 'images/오늘의책님.png', // 공유할 이미지 URL
+          imageUrl:
+            'https://raw.githubusercontent.com/KyoJin-Hwang/next-daily-book/refs/heads/main/public/images/%EC%98%A4%EB%8A%98%EC%9D%98%EC%B1%85%EB%8B%98.png', // 공유할 이미지 URL
           link: {
             mobileWebUrl: url, // 현재 페이지 URL을 공유
             webUrl: url,
@@ -30,7 +31,7 @@ const KakaoButton = ({ url }: { url: string }) => {
         },
         buttons: [
           {
-            title: '자세히 보기',
+            title: '결과 보기',
             link: {
               mobileWebUrl: url,
               webUrl: url,
