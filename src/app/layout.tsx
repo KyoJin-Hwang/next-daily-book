@@ -2,7 +2,7 @@ import { Metadata } from 'next';
 import { ThemeProvider } from 'next-themes';
 import Book from '@/components/Common/Book/Book';
 import '@styles/globals.css';
-
+import { GoogleAnalytics, GoogleTagManager } from '@next/third-parties/google';
 import Script from 'next/script';
 
 export const metadata: Metadata = {
@@ -29,6 +29,8 @@ export default function RootLayout({
         >
           <Book>{children}</Book>
         </ThemeProvider>
+        <GoogleTagManager gtmId={process.env.NEXT_PUBLIC_GA_ID || ''} />
+        <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID || ''} />
       </body>
     </html>
   );
