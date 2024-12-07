@@ -2,6 +2,9 @@ import { Metadata } from 'next';
 import { ThemeProvider } from 'next-themes';
 import Book from '@/components/Common/Book/Book';
 import '@styles/globals.css';
+
+import Script from 'next/script';
+
 export const metadata: Metadata = {
   title: { template: '오늘의 책님 | %s', default: '오늘의 책님' },
   description:
@@ -17,6 +20,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ko" suppressHydrationWarning>
+      <Script src="https://developers.kakao.com/sdk/js/kakao.js" />
       <body>
         <ThemeProvider
           attribute="class"

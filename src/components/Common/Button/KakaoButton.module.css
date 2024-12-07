@@ -1,0 +1,10 @@
+.kakaoBtn_container {
+  width: 3rem;
+  height: 3rem;
+}
+
+.kakaoBtn_img {
+  border-radius: 3rem;
+  width: 100%;
+  height: 100%;
+}
