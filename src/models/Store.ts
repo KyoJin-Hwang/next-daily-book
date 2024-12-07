@@ -31,10 +31,10 @@ export interface CategoryState {
   selectCategory: (category: Category) => void;
   removeCategory: () => void;
   removeAnswer: () => void;
-  updateAnswer: () => void;
-  againAnswer: () => void;
-  updateQuestion: (text: string) => void;
   removeQuestion: () => void;
+  updateAnswer: () => void;
+  updateQuestion: (text: string) => void;
+  againAnswer: () => void;
 }
 
 /**

@@ -59,7 +59,7 @@ const Roulette = () => {
           style={{ transform: `translateY(-${(currentIndex - 1) * 50}px)` }}
         >
           {foods.map((item, index) => (
-            <div className={style.roulette_item} key={index}>
+            <div className={style.roulette_item} key={item.id}>
               {item.answer}
             </div>
           ))}

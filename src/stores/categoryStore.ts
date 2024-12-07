@@ -76,15 +76,7 @@ export const useCategoryStore = create<CategoryState>()(
             };
           }),
         removeQuestion: () =>
-          set((state) => {
-            const categoryName = state.category.name as keyof CategoryAnswers;
-            return {
-              questions: {
-                ...state.questions,
-                [categoryName]: '',
-              },
-            };
-          }),
+          set(() => ({ questions: initialState.questions })),
       }),
       { name: 'category' },
     ),
