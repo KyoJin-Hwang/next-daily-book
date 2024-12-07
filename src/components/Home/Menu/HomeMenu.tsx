@@ -22,7 +22,7 @@ const HomeMenu = () => {
   const categories = [
     { name: 'question', id: 1, label: '오늘의 질문', color: '#aee2f2' },
     { name: 'love', id: 2, label: '오늘의 연애', color: '#f28f8f' },
-    { name: 'food', id: 3, label: '오늘의 반찬', color: '#b89ae7' },
+    { name: 'food', id: 3, label: '오늘의 음식', color: '#b89ae7' },
     {
       name: `answer?search=${searchParams}`,
       id: 4,

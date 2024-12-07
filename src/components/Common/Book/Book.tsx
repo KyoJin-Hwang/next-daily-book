@@ -6,9 +6,9 @@ import Header from '@/components/Common/Header/Header';
 import { useBookOpenStore } from '@/stores/bookOpenStore';
 import { useEffect } from 'react';
 import { useCategoryStore } from '@/stores/categoryStore';
+import { checkIfOpenToday } from '@/utils/date';
 
 const Book = ({ children }: { children: React.ReactNode }) => {
-  const categoryID = useCategoryStore((state) => state.category.id);
   const isOpen = useBookOpenStore((state) => state.isOpen);
   const setOpen = useBookOpenStore((state) => state.setOpen);
   const initializeOpenState = useBookOpenStore(
@@ -17,17 +17,18 @@ const Book = ({ children }: { children: React.ReactNode }) => {
 
   const removeAnswer = useCategoryStore((state) => state.removeAnswer);
   const removeCategory = useCategoryStore((state) => state.removeCategory);
+  const removeQuestion = useCategoryStore((state) => state.removeQuestion);
 
   useEffect(() => {
     initializeOpenState();
   }, [initializeOpenState]);
-
   useEffect(() => {
-    if (!isOpen && categoryID) {
+    if (!isOpen && !checkIfOpenToday()) {
       removeAnswer();
       removeCategory();
+      removeQuestion();
     }
-  }, [isOpen, categoryID]);
+  }, [isOpen]);
 
   return (
     <div className={style.container}>

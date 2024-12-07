@@ -5,4 +5,5 @@
   padding: 1rem 0px;
   position: relative;
   overflow: scroll;
+  word-break: break-all;
 }
