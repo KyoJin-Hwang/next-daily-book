@@ -36,7 +36,8 @@
 
 3일 전에 React19 안정화 발표가 나왔지만 프로젝트를 시작 당시 아직 React19 가 안정화 되지 않아서 가장 최신버전의 React18을 사용하게 되었다. 
 
-![](https://velog.velcdn.com/images/owen1127/post/2d815a66-d0b7-4892-a788-457956885efe/image.png)
+<img width="700" height="400" alt="오늘의책님" src="https://velog.velcdn.com/images/owen1127/post/2d815a66-d0b7-4892-a788-457956885efe/image.png">
+
 
 
 #### Style ( module.css ) 
@@ -87,14 +88,13 @@
  <img width="400" height="300" alt="기획사항이미지" src="https://github.com/user-attachments/assets/8bd41778-826b-4961-bfdc-8857f563648d">
 
 
-
 ### 개발 기간
 
 - 전체 개발 기간 : 24.11.17 ~ 24.12.07
-- UI 구현 : 24.11.17
-- 기능 구현 :
 
 ## 5. 페이지별 기능
+
+- 
 
 ## 6. 트러블 슈팅
 
