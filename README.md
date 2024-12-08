@@ -1,6 +1,6 @@
 # 📖 오늘의 책님
 
-<img width="400" heigth="400" alt="오늘의책님" src="https://github.com/user-attachments/assets/98b67146-f073-4a12-ade2-870108c6dc6b">
+<img width="400" height="400" alt="오늘의책님" src="https://github.com/user-attachments/assets/98b67146-f073-4a12-ade2-870108c6dc6b">
 
 - 배포URL : [오늘의 책님](https://book.bobcost.kr/)
 
@@ -66,19 +66,32 @@
 
 ## 3. 프로젝트 구조
 
-```
-
+```bash
+📂src
+├── 📂app // 페이지 폴더(Route) 및 layout
+├── 📂components // 페이지에서 사용되는 컴포넌트 폴더
+├── 📂data // 랜덤한 답변 및 음식 데이터.ts 폴더 
+├── 📂hooks // 커스텀 훅 폴더
+├── 📂models // 타입 폴더
+├── 📂stores // 클라이언트 상태관리 폴더
+├── 📂styles // 글로버 스타일 폴더
+└── 📂utils // 유틸성 함수 폴더
 ```
 
 ## 4. 기획 및 개발 기간
 
 ### 기획 기간
 
+- 24.11.14 ~ ( 프로젝트 도중에 Test를 통한 기획 조금씩 변경 ) 
+  
+ <img width="400" height="300" alt="기획사항이미지" src="https://github.com/user-attachments/assets/8bd41778-826b-4961-bfdc-8857f563648d">
+
+
 
 ### 개발 기간
 
-- 전체 개발 기간 : 24. ~ 24.12.07
-- UI 구현 :
+- 전체 개발 기간 : 24.11.17 ~ 24.12.07
+- UI 구현 : 24.11.17
 - 기능 구현 :
 
 ## 5. 페이지별 기능
