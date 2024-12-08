@@ -157,6 +157,7 @@ react19를 react18안정화된 버전으로 다운그레이하였다. 이후  
 
 npm install react@18 react-dom@18
 
+<br/>
 
 #### 트러블3
 next-themes를 사용하여 다크모드를 구현하는 도중, 버튼에 hover 상태를 적용할 때 module.css와 호환되지 않는 문제가 발생했습니다. 다크모드 상태에서는 버튼의 hover 스타일이 잘 적용되지만, 라이트모드에서는 hover 스타일이 적용되지 않았습니다.
@@ -164,6 +165,7 @@ next-themes를 사용하여 다크모드를 구현하는 도중, 버튼에 hover
 #### 트러블3 해결
 onMouseEnter와 onMouseLeave 이벤트를 활용하여 hover 상태를 동적으로 변경함으로써, module.css와 next-themes 간의 호환성 문제를 해결할 수 있었습니다. 또한, hover 로직을 useHover라는 커스텀 훅으로 배치하고,  버튼 컴포넌트를 만들어서 여러 컴포넌트에서 재사용할 수 있도록 효율적으로 관리할 수 있었습니다.
 
+<br/>
 
 #### 트러블4 
 PC 버전에서 텍스트를 Web Speedh API 로 음성을 들려주는 도중  두번씩 음성이 나오는 에러 발생 
