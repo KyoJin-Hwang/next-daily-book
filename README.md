@@ -165,7 +165,7 @@
 ## 6. 트러블 슈팅
 
 
-#### 트러블1
+### 트러블1
 Hydration failed because the server rendered HTML didn't match the client 에러가 발생했습니다. 이 에러는 서버에서 렌더링된 HTML과 클라이언트에서 렌더링된 HTML이 일치하지 않을 때 발생합니다.
 
 #### 트러블1해결
@@ -174,7 +174,7 @@ Hydration failed because the server rendered HTML didn't match the client 에러
 <html lang="en" suppressHydrationWarning>  
 
 
-#### 트러블2 
+### 트러블2 
 zustand를 설치하려던 도중 계속 설치가 되지않아서 error log 를 봐보니  zustand는 현재 react 19를 지원하지 않는다.  
 
 #### 트러블2해결  
@@ -184,7 +184,7 @@ npm install react@18 react-dom@18
 
 <br/>
 
-#### 트러블3
+### 트러블3
 next-themes를 사용하여 다크모드를 구현하는 도중, 버튼에 hover 상태를 적용할 때 module.css와 호환되지 않는 문제가 발생했습니다. 다크모드 상태에서는 버튼의 hover 스타일이 잘 적용되지만, 라이트모드에서는 hover 스타일이 적용되지 않았습니다.
 
 #### 트러블3 해결
@@ -192,7 +192,7 @@ onMouseEnter와 onMouseLeave 이벤트를 활용하여 hover 상태를 동적으
 
 <br/>
 
-#### 트러블4 
+### 트러블4 
 PC 버전에서 텍스트를 Web Speedh API 로 음성을 들려주는 도중  두번씩 음성이 나오는 에러 발생 
 
 #### 트러블4 해결 
