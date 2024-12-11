@@ -4,6 +4,7 @@ import Book from '@/components/Common/Book/Book';
 import '@styles/globals.css';
 import { GoogleAnalytics, GoogleTagManager } from '@next/third-parties/google';
 import Script from 'next/script';
+import Comment from '@/components/Common/Comment/Comment';
 
 export const metadata: Metadata = {
   title: { template: '오늘의 책님 | %s', default: '오늘의 책님' },
@@ -45,6 +46,7 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <Book>{children}</Book>
+          <Comment />
         </ThemeProvider>
         <GoogleTagManager gtmId={process.env.NEXT_PUBLIC_GA_ID || ''} />
         <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID || ''} />

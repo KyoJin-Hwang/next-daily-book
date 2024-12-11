@@ -6,6 +6,7 @@ import ThemeSwitcher from '../ThemeSwitcher/ThemeSwitcher';
 import style from './Footer.module.css';
 
 import { usePathname } from 'next/navigation'; // useRouter 훅을 임포트
+import ScrollDownButton from '../Button/ScrollDownButton';
 
 const Footer = () => {
   const [isAnswerPage, setIsAnswerPage] = useState(false);
@@ -23,7 +24,11 @@ const Footer = () => {
           created by <span className={style.footerSpan}>Owen</span>
         </p>
       </div>
-      {isAnswerPage && <KakaoButton url={window.location.href} />}
+      {isAnswerPage ? (
+        <KakaoButton url={window.location.href} />
+      ) : (
+        <ScrollDownButton />
+      )}
       <ThemeSwitcher />
     </div>
   );
