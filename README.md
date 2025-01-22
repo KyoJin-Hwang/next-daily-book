@@ -123,6 +123,13 @@
 
 #### 💎 giscus를 활용한 댓글 기능구현 
 
+|Main (Close)|Main (Open)|
+|------|---|
+
+
+|<img width="1512" alt="메인화면off" src="https://github.com/user-attachments/assets/7625dba3-f7e2-4feb-b001-158f22d67077" />|<img width="1512" alt="메인화면on" src="https://github.com/user-attachments/assets/af8f4dae-9fd9-4ef8-bbef-ad8e5af427a2" />|
+|- 상단 로고와 검색버튼, 다크 모드 버튼<br>- 작업|- 포켓몬 카드 클릭 시 상세 정보를 확인할 수 있다.|
+
 #### / ( 메인 페이지 ) 
 
 <img width="300" alt="image" src="https://github.com/user-attachments/assets/388794a2-86c9-4d2b-950d-0a9c45b68830">
