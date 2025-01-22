@@ -29,7 +29,6 @@ const Comment = () => {
     scriptElem.setAttribute('data-lang', 'ko');
 
     ref.current.appendChild(scriptElem);
-    console.log(ref, scriptElem);
   }, [theme]);
   useEffect(() => {
     const iframe = document.querySelector<HTMLIFrameElement>(

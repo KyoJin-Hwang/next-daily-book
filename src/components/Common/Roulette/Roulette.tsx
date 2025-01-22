@@ -16,7 +16,6 @@ const Roulette = () => {
   const [currentIndex, setCurrentIndex] = useState(-1);
   const [isSpinning, setIsSpinning] = useState(false);
 
-  console.log(currentIndex);
   useEffect(() => {
     if (foodID) {
       startRoulette();
