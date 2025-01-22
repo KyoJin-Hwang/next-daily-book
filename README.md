@@ -121,51 +121,28 @@
 - **`setOpen`**: 책 커버 상태를 변경하는 함수입니다. 이 함수를 통해 `isOpen` 값을 `true` 또는 `false`로 변경할 수 있습니다.
 - **`initializeOpenState`**: 책 커버 상태를 초기화하는 함수입니다. 예를 들어, 페이지를 새로 고침할 때 커버 상태를 `false`로 리셋할 수 있습니다.
 
-#### 💎 giscus를 활용한 댓글 기능구현 
+#### 💎 giscus를 활용한 댓글 기능구현 
 
 |Main (Close)|Main (Open)|
-|------|---|
+|-|-|
 |<img width="1512" alt="메인화면off" src="https://github.com/user-attachments/assets/7625dba3-f7e2-4feb-b001-158f22d67077" />|<img width="1512" alt="메인화면on" src="https://github.com/user-attachments/assets/af8f4dae-9fd9-4ef8-bbef-ad8e5af427a2" />|
-|- 상단 로고와 검색버튼, 다크 모드 버튼<br>- 작업|- 포켓몬 카드 클릭 시 상세 정보를 확인할 수 있다.|
+|- 첫 페이지|- 헤당 영역을 클릭시 페이지 이동<br/>- 댓글 기능|
 
-#### / ( 메인 페이지 ) 
+|오늘의질문 (질문)|오늘의질문 (답변)|
+|-|-|
+|<img width="1512" alt="질문1" src="https://github.com/user-attachments/assets/25df8974-0c57-4aef-8e50-3010aa505b44" />|<img width="1512" alt="질문2" src="https://github.com/user-attachments/assets/4ce7b5dd-0185-4d16-b122-b0e71577146a" />|
+|질문을 입력하는 페이지|- 질문 답변페이지<br/>- TTS 기능|
 
-<img width="300" alt="image" src="https://github.com/user-attachments/assets/388794a2-86c9-4d2b-950d-0a9c45b68830">
+|오늘의연애 (질문)|오늘의연애 (답변)|
+|-|-|
+|<img width="1512" alt="연애1" src="https://github.com/user-attachments/assets/da1818df-4f74-40a2-91b8-b49a3fc12521" />|<img width="1512" alt="연애2" src="https://github.com/user-attachments/assets/722d36eb-83b3-4292-baa7-82d7ba57bfcb" />|
+|- 질문을 입력하는 페이지|- 질문 답변페이지<br/>- TTS 기능|
 
-> 기능설명
-- 각 페이지를 이동 할 수 있다. 
-- Header 에서는 날짜 및 페이지를 이동할 시 뒤로 갈 수 있는 기능을 가지고 있다. 
-- Footer 에서는 제작자, 다크모드 및 오늘의 답변 페이지로 이동시 카카오톡 공유 기능을 가지고 있다. 
+|오늘의음식|오늘의 답변|
+|-|-|
+|![음식](https://github.com/user-attachments/assets/d250ae8a-ade6-4e93-b24c-3060cc9087d0)|<img width="510" alt="답변1" src="https://github.com/user-attachments/assets/dc161363-f9b7-43a4-a617-c6540228c18d" />|
+|- 룰렛을 통한 음식추천 기능|- 카카오톡 공유<br/>- 내가 질문한 내용 및 답변 확인|
 
-
-#### /question, /love ( 오늘의 질문 및 오늘의 연애 ) 
-
-<img width="360" height="500" alt="image" src="https://github.com/user-attachments/assets/ee5ab4ff-754d-4af5-b5d4-1681a2d7f8bd">
-<img width="360" height="500" alt="image" src="https://github.com/user-attachments/assets/029d1fa3-364c-41ad-871c-dcc8b0d00914">
-<img width="360" height="500" alt="image" src="https://github.com/user-attachments/assets/58f815e8-8a5a-4328-869e-cd7f5598a4d3">
-<img width="360" height="500" alt="image" src="https://github.com/user-attachments/assets/8812ca97-7412-499a-984d-ddc9de8bd2e4">
-
-> 기능설명
-- InputAll ( InputText.tsx, InputResult.tsx 포함됨 ) 이라는 컴포넌트로 재사용성을 극대화 하였다. 
-- 입력창에 질문을 할 경우 Data.ts에 가지고 있는 랜덤한 답변을 받을 수 있다. 
-- TTS 기능을 가지고 있다. 
-
-#### /food ( 오늘의 메뉴 ) 
-
-<img width="360" height="500" alt="image" src="https://github.com/user-attachments/assets/c1bb2d9f-6ca0-41fa-8a0d-123ad02d6a15">
-
-> 기능설명
-- 직접 제작한 룰렛 애니메이션을 통한 메뉴추천
-
-
-#### /answer ( 오늘의 답변 ) 
-
-<img width="360" height="500" alt="스크린샷 2024-12-08 오후 4 46 21" src="https://github.com/user-attachments/assets/ad02a5a3-2fb7-4c0a-b35c-decb8185b5fb">
-
-> 기능설명
-- 카카오톡 공유
-- 내가 질문한 내용과 답변 확인
-- encodeURIComponent 와 JSON.stringify를 활용해 데이터를 안전하게 URL 전달 
 
 ## 6. 트러블 슈팅
 
